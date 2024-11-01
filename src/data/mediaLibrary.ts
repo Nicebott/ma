@@ -6,7 +6,7 @@ export const mediaLibrary: MediaItem[] = [
     title: "LEGO Ninjago",
     originalTitle: "The LEGO Ninjago Movie",
     description: "Un joven maestro constructor y ninja secreto se enfrenta al malvado señor de la guerra Garmadon, quien también resulta ser su padre. Con la ayuda de sus amigos, que también son ninjas secretos, deben derrotar a Garmadon y salvar su ciudad.",
-    type: "movie",
+    type: "series",
     rating: 8.5,
     featured: true,
     coverUrl: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vUo0pNXGhp2ffTJxiStWt6fHL7F.jpg",
