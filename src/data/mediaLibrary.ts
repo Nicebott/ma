@@ -9,11 +9,11 @@ export const mediaLibrary: MediaItem[] = [
     type: "series",
     rating: 8.5,
     featured: true,
-    coverUrl: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vUo0pNXGhp2ffTJxiStWt6fHL7F.jpg",
-    videoUrl: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vUo0pNXGhp2ffTJxiStWt6fHL7F.jpg",
+    coverUrl: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/beKgqwruOGmVAvRwRvfuOcXwl2Z.jpg",
+    videoUrl: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/beKgqwruOGmVAvRwRvfuOcXwl2Z.jpg",
     status: "Estrenada",
     genres: ["Animación", "Acción", "Aventura", "Comedia", "Familiar"],
-    tmdbUrl: "https://www.themoviedb.org/movie/274862-the-lego-ninjago-movie",
+    tmdbUrl: "https://www.themoviedb.org/tv/38693-ninjago-masters-of-spinjitzu",
     seasons: [
       {
         number: 1,
