@@ -14,6 +14,26 @@ export const mediaLibrary: MediaItem[] = [
     status: "Estrenada",
     genres: ["Animación", "Acción", "Aventura", "Comedia", "Familiar"],
     tmdbUrl: "https://www.themoviedb.org/movie/274862-the-lego-ninjago-movie"
+        seasons: [
+      {
+        number: 1,
+        episodes: [
+          {
+            number: 1,
+            title: "Piloto",
+            videoUrl: "https://filemoon.sx/e/l63p1aw5kf4h",
+            thumbnail: "https://image.tmdb.org/t/p/w500/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
+            airDate: "2021-02-23"
+          },
+          {
+            number: 2,
+            title: "Heritage",
+            videoUrl: "Próximamente",
+            thumbnail: "https://image.tmdb.org/t/p/w500/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
+            airDate: "2021-03-02"
+          }
+        ]
+      },
   },
   {
     id: 2,
