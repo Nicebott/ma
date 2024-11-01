@@ -21,7 +21,7 @@ export const mediaLibrary: MediaItem[] = [
           {
             number: 1,
             title: "Piloto",
-            videoUrl: "https://filemoon.sx/e/l63p1aw5kf4h",
+            videoUrl: "",
             thumbnail: "https://image.tmdb.org/t/p/w500/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
             airDate: "2021-02-23"
           },
