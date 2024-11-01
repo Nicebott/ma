@@ -22,14 +22,14 @@ export const mediaLibrary: MediaItem[] = [
             number: 1,
             title: "Piloto",
             videoUrl: "https://filemoon.sx/e/l63p1aw5kf4h",
-            thumbnail: "https://image.tmdb.org/t/p/w500/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
+            thumbnail: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/beKgqwruOGmVAvRwRvfuOcXwl2Z.jpg",
             airDate: "2021-02-23"
           },
           {
             number: 2,
             title: "Heritage",
             videoUrl: "Próximamente",
-            thumbnail: "https://image.tmdb.org/t/p/w500/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
+            thumbnail: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/beKgqwruOGmVAvRwRvfuOcXwl2Z.jpg",
             airDate: "2021-03-02"
           }
         ]
