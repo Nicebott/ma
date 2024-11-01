@@ -1,20 +1,29 @@
 export interface Episode {
-  id: number;
+  number: number;
   title: string;
-  description: string;
-  thumbnail: string;
-  duration: string;
-  airDate: string;
+  videoUrl: string;
+  thumbnail?: string;
+  airDate?: string;
 }
 
-export interface Movie {
+export interface Season {
+  number: number;
+  episodes: Episode[];
+}
+
+export interface MediaItem {
   id: number;
   title: string;
+  originalTitle?: string;
+  description: string;
   type: 'movie' | 'series';
   rating: number;
-  image: string;
-  category: string;
-  description: string;
-  featured?: boolean;
-  episodes?: Record<number, Episode[]>;
+  featured: boolean;
+  coverUrl: string;
+  videoUrl: string;
+  status?: string;
+  lastAirDate?: string;
+  genres?: string[];
+  tmdbUrl?: string;
+  seasons?: Season[];
 }
