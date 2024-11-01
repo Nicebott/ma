@@ -21,7 +21,7 @@ export const mediaLibrary: MediaItem[] = [
           {
             number: 1,
             title: "Piloto",
-            videoUrl: "",
+            videoUrl: "https://hqq.ac/player/embed_player.php?vid=Yml6RVNYaGxkUmowZGJvM2JmRnhDUT09",
             thumbnail: "https://image.tmdb.org/t/p/w500/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
             airDate: "2021-02-23"
           },
