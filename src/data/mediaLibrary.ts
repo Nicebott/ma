@@ -14,7 +14,7 @@ export const mediaLibrary: MediaItem[] = [
     status: "Estrenada",
     genres: ["Animación", "Acción", "Aventura", "Comedia", "Familiar"],
     tmdbUrl: "https://www.themoviedb.org/movie/274862-the-lego-ninjago-movie"
-        seasons: [
+    seasons: [
       {
         number: 1,
         episodes: [
