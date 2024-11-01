@@ -4,31 +4,16 @@ export const mediaLibrary: MediaItem[] = [
   {
     id: 1,
     title: "LEGO Ninjago",
-    originalTitle: "The LEGO Ninjago Movie",
-    description: "Un joven maestro constructor y ninja secreto se enfrenta al malvado señor de la guerra Garmadon, quien también resulta ser su padre. Con la ayuda de sus amigos, que también son ninjas secretos, deben derrotar a Garmadon y salvar su ciudad.",
-    type: "movie",
+    originalTitle: "Ninjago",
+    description: "Los guerreros están dispuestos a ir a las profundidades del inframundo para recuperar las armas legendarias del oro de Ninjago.",
+    type: "series",
     rating: 8.5,
     featured: true,
-    coverUrl: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vUo0pNXGhp2ffTJxiStWt6fHL7F.jpg",
-    videoUrl: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vUo0pNXGhp2ffTJxiStWt6fHL7F.jpg",
+    coverUrl: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/beKgqwruOGmVAvRwRvfuOcXwl2Z.jpg",
+    videoUrl: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/beKgqwruOGmVAvRwRvfuOcXwl2Z.jpg",
     status: "Estrenada",
     genres: ["Animación", "Acción", "Aventura", "Comedia", "Familiar"],
-    tmdbUrl: "https://www.themoviedb.org/movie/274862-the-lego-ninjago-movie"
-  },
-  {
-    id: 2,
-    title: "Superman & Lois",
-    originalTitle: "Superman & Lois",
-    description: "Clark Kent y Lois Lane regresan a Smallville con sus hijos Jonathan y Jordan, donde se encuentran con nuevos desafíos tanto como padres como superhéroes.",
-    type: "series",
-    rating: 8.061,
-    featured: false,
-    coverUrl: "https://image.tmdb.org/t/p/original/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
-    videoUrl: "https://filemoon.sx/e/l63p1aw5kf4h",
-    status: "En emisión",
-    lastAirDate: "2024-10-21",
-    genres: ["Drama", "Sci-Fi & Fantasy"],
-    tmdbUrl: "https://www.themoviedb.org/tv/95057-superman-lois",
+    tmdbUrl: "https://www.themoviedb.org/tv/38693-ninjago-masters-of-spinjitzu",
     seasons: [
       {
         number: 1,
@@ -36,7 +21,7 @@ export const mediaLibrary: MediaItem[] = [
           {
             number: 1,
             title: "Piloto",
-            videoUrl: "https://filemoon.sx/e/l63p1aw5kf4h",
+            videoUrl: "",
             thumbnail: "https://image.tmdb.org/t/p/w500/vlv1gn98GqMnKHLSh0dNciqGfBl.jpg",
             airDate: "2021-02-23"
           },
@@ -114,5 +99,20 @@ export const mediaLibrary: MediaItem[] = [
         ]
       }
     ]
+  },
+  {
+    id: 2,
+    title: "Canario Negro",
+    originalTitle: "Canario Negro",
+    description: "La agente de alto rango de la CIA Avery Graves es chantajeada por terroristas para que traicione a su propio país y salve a su marido secuestrado. Separada de su equipo, recurre a sus contactos del hampa para sobrevivir y ayudar a localizar la codiciada información que quieren los secuestradores.",
+    type: "movie",
+    rating: 8.061,
+    featured: false,
+    coverUrl: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/8iD8O4ZFhVHpT7RUmHJeyGEtZpX.jpg",
+    videoUrl: "https://filemoon.sx/e/9n6oq6t61qrg",
+    status: "Estrenado",
+    lastAirDate: "2024-10-21",
+    genres: ["Drama", "Sci-Fi & Fantasy"],
+    tmdbUrl: "https://www.themoviedb.org/movie/976734-canary-black"
   }
 ];
