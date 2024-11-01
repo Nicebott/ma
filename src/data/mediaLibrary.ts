@@ -13,7 +13,7 @@ export const mediaLibrary: MediaItem[] = [
     videoUrl: "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vUo0pNXGhp2ffTJxiStWt6fHL7F.jpg",
     status: "Estrenada",
     genres: ["Animación", "Acción", "Aventura", "Comedia", "Familiar"],
-    tmdbUrl: "https://www.themoviedb.org/movie/274862-the-lego-ninjago-movie"
+    tmdbUrl: "https://www.themoviedb.org/movie/274862-the-lego-ninjago-movie",
     seasons: [
       {
         number: 1,
@@ -33,7 +33,8 @@ export const mediaLibrary: MediaItem[] = [
             airDate: "2021-03-02"
           }
         ]
-      },
+      }
+    ]
   },
   {
     id: 2,
