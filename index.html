@@ -1,24 +1,875 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StreamFlix - Tu plataforma de streaming favorita | Series y Películas</title>
-    <meta name="description" content="Disfruta de las mejores series y películas en StreamFlix. Contenido exclusivo, estrenos y clásicos. Streaming de alta calidad." />
-    <meta name="keywords" content="streaming, películas, series, entretenimiento, ver online, StreamFlix" />
-    <meta name="author" content="Nicebott" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="StreamFlix - Plataforma de Streaming" />
-    <meta property="og:description" content="Disfruta de las mejores series y películas en StreamFlix. Contenido exclusivo, estrenos y clásicos." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="StreamFlix - Streaming de Series y Películas" />
-    <meta name="twitter:description" content="Tu plataforma de streaming favorita con el mejor contenido." />
-    <link rel="canonical" href="https://botvip21.netlify.app/" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html><head><base href="." />
+<title>Portafolio Médico Profesional</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+:root {
+  --primary: #2c6e8f;
+  --secondary: #4fbdba;
+  --accent: #f0a500;
+  --background: #f5f5f5;
+  --text: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: var(--secondary);
+  opacity: 0.05;
+  border-radius: 45%;
+  animation: wave 25s infinite linear;
+}
+
+.wave:nth-child(2) {
+  background: var(--primary);
+  animation-duration: 30s;
+  animation-delay: -5s;
+}
+
+.wave:nth-child(3) {
+  background: var(--accent);
+  animation-duration: 35s;
+  animation-delay: -10s;
+}
+
+@keyframes wave {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.dna-helix {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.strand {
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 10px;
+  animation: dnaRotate 10s infinite linear;
+}
+
+@keyframes dnaRotate {
+  from {
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
+  }
+}
+
+.header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-content {
+  text-align: center;
+  z-index: 2;
+}
+
+.pulse-circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: var(--secondary);
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.title {
+  font-size: 2rem; /* Smaller base size */
+  color: var(--primary);
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s forwards;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s 0.3s forwards;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.nav.scrolled {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.hamburger::before {
+  top: -6px;
+}
+
+.hamburger::after {
+  bottom: -6px;
+}
+
+.menu-toggle.active .hamburger {
+  background: transparent;
+}
+
+.menu-toggle.active .hamburger::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.menu-toggle.active .hamburger::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    padding: 5rem 2rem;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+  
+  .nav.scrolled {
+    padding: 0.5rem;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.section {
+  padding: 5rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1rem;
+  }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.card.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  fill: var(--primary);
+}
+
+.contact-form {
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.submit-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Animación para el scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Nuevas animaciones y estilos */
+.floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--secondary);
+  border-radius: 50%;
+  animation: float 15s infinite linear;
+  opacity: 0.2;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+}
+
+@media (max-width: 992px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.stat-item.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.stat-number {
+  font-size: 3rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.testimonial-container {
+  max-width: 1200px;
+  margin: 4rem auto;
+  position: relative;
+}
+
+.testimonial {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin: 2rem 0;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.5s ease;
+}
+
+.testimonial.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-indicator {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 100px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.scroll-progress {
+  width: 100%;
+  background: var(--primary);
+  position: absolute;
+  bottom: 0;
+  border-radius: 5px;
+  transition: height 0.3s ease;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+}
+
+.expertise-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.expertise-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .wave {
+    animation-duration: 15s;
+  }
+  
+  .floating-particles {
+    display: none;
+  }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="animated-background">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>
+
+<div class="dna-helix" id="dnaHelix"></div>
+
+<nav class="nav">
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <span class="hamburger"></span>
+  </button>
+  <div class="nav-links">
+    <a href="#inicio" class="nav-link">Inicio</a>
+    <a href="#especialidades" class="nav-link">Especialidades</a>
+    <a href="#experiencia" class="nav-link">Experiencia</a>
+    <a href="#contacto" class="nav-link">Contacto</a>
+  </div>
+</nav>
+
+<header id="inicio" class="header">
+  <div class="pulse-circle"></div>
+  <div class="header-content">
+    <h1 class="title">Dra. Wiltany Hernández</h1>
+    <p class="subtitle">Medicina General y Especialidades</p>
+  </div>
+</header>
+
+<section id="especialidades" class="section">
+  <div class="card-container">
+    <div class="card">
+      <svg class="card-icon" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v4H7v2h4v4h2v-4h4v-2h-4V7z"/>
+      </svg>
+      <h3>Medicina General</h3>
+      <p>Atención integral y preventiva para toda la familia</p>
+    </div>
+    
+    <div class="card">
+      <svg class="card-icon" viewBox="0 0 24 24">
+        <path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3z"/>
+      </svg>
+      <h3>Cardiología</h3>
+      <p>Diagnóstico y tratamiento de enfermedades cardiovasculares</p>
+    </div>
+    
+    <div class="card">
+      <svg class="card-icon" viewBox="0 0 24 24">
+        <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+      </svg>
+      <h3>Educación Médica</h3>
+      <p>Compromiso con la formación continua y la excelencia médica</p>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia" class="section">
+  <div class="card-container">
+    <div class="card">
+      <h3>Hospital General</h3>
+      <p>2015 - Presente</p>
+      <p>Médico Principal en Medicina Interna</p>
+    </div>
+    
+    <div class="card">
+      <h3>Clínica Privada</h3>
+      <p>2010 - 2015</p>
+      <p>Especialista en Cardiología</p>
+    </div>
+    
+    <div class="card">
+      <h3>Centro de Investigación</h3>
+      <p>2008 - 2010</p>
+      <p>Investigador Médico</p>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="section">
+  <form class="contact-form">
+    <div class="form-group">
+      <input type="text" class="form-input" placeholder="Nombre completo" required>
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-input" placeholder="Correo electrónico" required>
+    </div>
+    <div class="form-group">
+      <textarea class="form-input" placeholder="Mensaje" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Enviar mensaje</button>
+  </form>
+</section>
+
+<div class="floating-particles" id="particles"></div>
+
+<section class="section">
+  <div class="stats-container">
+    <div class="stat-item">
+      <div class="stat-number" data-target="1500">0</div>
+      <p>Pacientes Atendidos</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="15">0</div>
+      <p>Años de Experiencia</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="50">0</div>
+      <p>Publicaciones</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="200">0</div>
+      <p>Conferencias</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="testimonial-container">
+    <div class="testimonial">
+      <p>"Excelente profesional, muy dedicado y atento."</p>
+      <h4>- María García</h4>
+    </div>
+    <div class="testimonial">
+      <p>"El mejor médico que he consultado, muy profesional."</p>
+      <h4>- Juan Pérez</h4>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="expertise-grid">
+    <div class="expertise-item">
+      <h3>Certificaciones</h3>
+      <ul>
+        <li>Medicina Interna</li>
+        <li>Cardiología</li>
+        <li>Medicina Preventiva</li>
+      </ul>
+    </div>
+    <div class="expertise-item">
+      <h3>Tecnologías</h3>
+      <ul>
+        <li>Ecocardiografía Avanzada</li>
+        <li>Monitoreo Cardíaco</li>
+        <li>Diagnóstico Digital</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="scroll-indicator">
+  <div class="scroll-progress"></div>
+</div>
+
+<script>
+// Animación de navegación al hacer scroll
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('.nav');
+  if (window.scrollY > 100) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+// Animación de las tarjetas al hacer scroll
+const cards = document.querySelectorAll('.card');
+const observerOptions = {
+  threshold: 0.2,
+  rootMargin: '0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+cards.forEach(card => observer.observe(card));
+
+// Animación suavizada para los enlaces de navegación
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    const navHeight = document.querySelector('.nav').offsetHeight;
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+    
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Animación de contador para estadísticas
+function animateNumber(element) {
+  const target = parseInt(element.getAttribute('data-target'));
+  let current = 0;
+  const increment = target / 100;
+  
+  const timer = setInterval(() => {
+    current += increment;
+    element.textContent = Math.floor(current);
+    
+    if (current >= target) {
+      element.textContent = target;
+      clearInterval(timer);
+    }
+  }, 20);
+}
+
+// Observer para estadísticas
+const statItems = document.querySelectorAll('.stat-item');
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      const numberElement = entry.target.querySelector('.stat-number');
+      animateNumber(numberElement);
+    }
+  });
+}, observerOptions);
+
+statItems.forEach(item => statsObserver.observe(item));
+
+// Observer para testimonios
+const testimonials = document.querySelectorAll('.testimonial');
+testimonials.forEach(testimonial => observer.observe(testimonial));
+
+// Crear partículas flotantes
+function createParticles() {
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 50; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + 'vw';
+    particle.style.animationDelay = Math.random() * 15 + 's';
+    container.appendChild(particle);
+  }
+}
+createParticles();
+
+// Crear DNA helix strands
+function createDNAStrands() {
+  const helix = document.getElementById('dnaHelix');
+  const numberOfStrands = 30;
+  
+  for (let i = 0; i < numberOfStrands; i++) {
+    const strand = document.createElement('div');
+    strand.className = 'strand';
+    strand.style.top = `${(i / numberOfStrands) * 100}%`;
+    strand.style.animationDelay = `${(i / numberOfStrands) * -10}s`;
+    helix.appendChild(strand);
+    
+    const complementaryStrand = document.createElement('div');
+    complementaryStrand.className = 'strand';
+    complementaryStrand.style.top = `${(i / numberOfStrands) * 100}%`;
+    complementaryStrand.style.animationDelay = `${(i / numberOfStrands) * -10 + 5}s`;
+    helix.appendChild(complementaryStrand);
+  }
+}
+
+createDNAStrands();
+
+// Indicador de scroll
+window.addEventListener('scroll', () => {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.querySelector('.scroll-progress').style.height = scrolled + '%';
+});
+
+// Add this to the existing JavaScript
+document.addEventListener('touchstart', function() {}, true);
+
+// Add this to your existing JavaScript
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+    menuToggle.classList.remove('active');
+    navLinks.classList.remove('active');
+  }
+});
+</script>
+
+</body>
 </html>
