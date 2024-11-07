@@ -585,6 +585,121 @@ body {
 .news-card:hover {
   transform: translateY(-10px);
 }
+
+.founder-section {
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.founder-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.founder-card {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-out;
+}
+
+.founder-image {
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.founder-image img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+.founder-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.founder-content {
+  flex: 1;
+}
+
+.founder-content h3 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.founder-content h4 {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.founder-quote {
+  font-style: italic;
+  color: var(--secondary);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+.founder-expertise h5 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.founder-expertise ul {
+  list-style: none;
+}
+
+.founder-expertise li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.founder-expertise li::before {
+  content: "•";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .founder-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .founder-quote {
+    border-left: none;
+    border-bottom: 3px solid var(--accent);
+    padding: 0 0 1rem 0;
+  }
+  
+  .founder-expertise li {
+    padding-left: 0;
+  }
+  
+  .founder-expertise li::before {
+    display: none;
+  }
+}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -638,6 +753,32 @@ body {
       <i class="fas fa-file-contract fa-3x"></i>
       <h3>Contratos</h3>
       <p>Elaboración y revisión de contratos legales.</p>
+    </div>
+  </div>
+</section>
+
+<section class="founder-section">
+  <h2 class="section-title">Nuestro Equipo</h2>
+  <div class="founder-container">
+    <div class="founder-card">
+      <div class="founder-image">
+        <img src="/a/a4cebb8c-4005-448d-bca4-f085cd226260" alt="Licda. Maribel Fermin Reyes De Zierow, Socio Fundador" width="200" height="200" style="border-radius: 20px; object-fit: cover;">
+      </div>
+      <div class="founder-content">
+        <h3>Licda. Maribel Fermin Reyes De Zierow</h3>
+        <h4>Socio Fundador</h4>
+        <p class="founder-quote">"Empoderandose para tomar decisiones personales y empresariales acertadas."</p>
+        <div class="founder-expertise">
+          <h5>Áreas de Especialización:</h5>
+          <ul>
+            <li>Derecho administrativo, empresarial y comercial</li>
+            <li>Derecho migratorio</li>
+            <li>Asesoría a empresas multinacionales</li>
+            <li>Derecho inmobiliario - compra y venta de propiedades</li>
+            <li>Negocios rentables y escalabilidad digital</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
