@@ -10,14 +10,17 @@
 <body>
     <header class="encabezado">
         <div class="encabezado__contenedor">
-            <h1 class="encabezado__titulo">GuaguaTime RD</h1>
-            <p class="encabezado__subtitulo">Simulador de Rutas de Transporte Público</p>
+            <h1 class="encabezado__titulo" data-i18n="header.title">GuaguaTime RD</h1>
+            <p class="encabezado__subtitulo" data-i18n="header.subtitle">Simulador de Rutas de Transporte Público</p>
             <nav class="encabezado__navegacion">
-                <button class="boton boton--secundario" id="boton-mapa" aria-label="Ver mapa">
+                <button class="boton boton--secundario" id="boton-mapa" aria-label="Ver mapa" data-i18n="header.map">
                     Mapa
                 </button>
-                <button class="boton boton--secundario" id="boton-modo-oscuro" aria-label="Cambiar modo oscuro">
+                <button class="boton boton--secundario" id="boton-modo-oscuro" aria-label="Cambiar modo oscuro" data-i18n="header.darkMode">
                     Modo Oscuro
+                </button>
+                <button class="boton boton--secundario" id="boton-idioma" aria-label="Cambiar idioma" data-i18n="header.language">
+                    English
                 </button>
             </nav>
         </div>
@@ -26,15 +29,16 @@
     <main class="principal">
         <section class="buscador" aria-label="Buscador de rutas">
             <div class="buscador__contenedor">
-                <h2 class="buscador__titulo">Planifica tu Viaje</h2>
+                <h2 class="buscador__titulo" data-i18n="search.title">Planifica tu Viaje</h2>
                 
                 <form class="formulario" id="formulario-busqueda">
                     <div class="formulario__grupo">
-                        <label for="origen" class="formulario__etiqueta">Origen</label>
+                        <label for="origen" class="formulario__etiqueta" data-i18n="search.origin">Origen</label>
                         <input 
                             type="text" 
                             id="origen" 
                             class="formulario__campo"
+                            data-i18n-placeholder="search.originPlaceholder"
                             placeholder="Escribe tu punto de partida"
                             autocomplete="off"
                             required
@@ -44,11 +48,12 @@
                     </div>
 
                     <div class="formulario__grupo">
-                        <label for="destino" class="formulario__etiqueta">Destino</label>
+                        <label for="destino" class="formulario__etiqueta" data-i18n="search.destination">Destino</label>
                         <input 
                             type="text" 
                             id="destino" 
                             class="formulario__campo"
+                            data-i18n-placeholder="search.destinationPlaceholder"
                             placeholder="Escribe tu destino"
                             autocomplete="off"
                             required
@@ -58,24 +63,24 @@
                     </div>
 
                     <div class="formulario__grupo">
-                        <label class="formulario__etiqueta">Ordenar por</label>
+                        <label class="formulario__etiqueta" data-i18n="search.sortBy">Ordenar por</label>
                         <div class="formulario__opciones">
                             <label class="radio">
                                 <input type="radio" name="ordenar" value="tiempo" checked>
-                                <span class="radio__texto">Tiempo</span>
+                                <span class="radio__texto" data-i18n="search.time">Tiempo</span>
                             </label>
                             <label class="radio">
                                 <input type="radio" name="ordenar" value="costo">
-                                <span class="radio__texto">Costo</span>
+                                <span class="radio__texto" data-i18n="search.cost">Costo</span>
                             </label>
                             <label class="radio">
                                 <input type="radio" name="ordenar" value="transbordos">
-                                <span class="radio__texto">Transbordos</span>
+                                <span class="radio__texto" data-i18n="search.transfers">Transbordos</span>
                             </label>
                         </div>
                     </div>
 
-                    <button type="submit" class="boton boton--primario">
+                    <button type="submit" class="boton boton--primario" data-i18n="search.searchButton">
                         Buscar Rutas
                     </button>
                 </form>
@@ -84,7 +89,7 @@
 
         <section class="alertas" id="seccion-alertas" aria-label="Alertas de tráfico">
             <div class="alertas__contenedor">
-                <h3 class="alertas__titulo">Condiciones Actuales</h3>
+                <h3 class="alertas__titulo" data-i18n="alerts.title">Condiciones Actuales</h3>
                 <div class="alertas__lista" id="lista-alertas"></div>
             </div>
         </section>
@@ -92,14 +97,14 @@
         <section class="resultados" id="seccion-resultados" aria-label="Resultados de búsqueda">
             <div class="resultados__contenedor">
                 <div class="resultados__encabezado">
-                    <h2 class="resultados__titulo">Rutas Disponibles</h2>
-                    <button class="boton boton--texto" id="boton-favoritos">
+                    <h2 class="resultados__titulo" data-i18n="results.title">Rutas Disponibles</h2>
+                    <button class="boton boton--texto" id="boton-favoritos" data-i18n="results.viewFavorites">
                         Ver Favoritos
                     </button>
                 </div>
                 <div class="resultados__lista" id="lista-resultados"></div>
                 <div class="resultados__vacio" id="mensaje-vacio">
-                    <p>Ingresa origen y destino para buscar rutas disponibles</p>
+                    <p data-i18n="results.emptyMessage">Ingresa origen y destino para buscar rutas disponibles</p>
                 </div>
             </div>
         </section>
@@ -107,35 +112,35 @@
         <section class="favoritos oculto" id="seccion-favoritos" aria-label="Rutas favoritas">
             <div class="favoritos__contenedor">
                 <div class="favoritos__encabezado">
-                    <h2 class="favoritos__titulo">Mis Rutas Favoritas</h2>
-                    <button class="boton boton--texto" id="cerrar-favoritos">
+                    <h2 class="favoritos__titulo" data-i18n="favorites.title">Mis Rutas Favoritas</h2>
+                    <button class="boton boton--texto" id="cerrar-favoritos" data-i18n="favorites.close">
                         Cerrar
                     </button>
                 </div>
                 <div class="favoritos__lista" id="lista-favoritos"></div>
                 <div class="favoritos__vacio" id="favoritos-vacio">
-                    <p>No tienes rutas favoritas guardadas</p>
+                    <p data-i18n="favorites.emptyMessage">No tienes rutas favoritas guardadas</p>
                 </div>
             </div>
         </section>
 
         <section class="informacion" aria-label="Información de cálculo">
             <div class="informacion__contenedor">
-                <h3 class="informacion__titulo">Criterios de Cálculo</h3>
+                <h3 class="informacion__titulo" data-i18n="info.title">Criterios de Cálculo</h3>
                 <article class="informacion__contenido">
-                    <h4>Tiempo de Ruta</h4>
-                    <p>Tiempo base = suma de tiempo_min de todos los tramos</p>
-                    <p>Por cada condición activa: tiempo = tiempo × (1 + tiempo_pct/100)</p>
-                    <p>Resultado redondeado al minuto más cercano</p>
+                    <h4 data-i18n="info.routeTime">Tiempo de Ruta</h4>
+                    <p data-i18n="info.routeTimeDesc1">Tiempo base = suma de tiempo_min de todos los tramos</p>
+                    <p data-i18n="info.routeTimeDesc2">Por cada condición activa: tiempo = tiempo × (1 + tiempo_pct/100)</p>
+                    <p data-i18n="info.routeTimeDesc3">Resultado redondeado al minuto más cercano</p>
                 </article>
                 <article class="informacion__contenido">
-                    <h4>Costo Total</h4>
-                    <p>Costo total = suma de costos base + suma de costos extra por condiciones</p>
+                    <h4 data-i18n="info.totalCost">Costo Total</h4>
+                    <p data-i18n="info.totalCostDesc">Costo total = suma de costos base + suma de costos extra por condiciones</p>
                 </article>
                 <article class="informacion__contenido">
-                    <h4>Ranking</h4>
-                    <p>Por defecto ordenado por tiempo total</p>
-                    <p>Puedes alternar entre tiempo, costo o número de transbordos</p>
+                    <h4 data-i18n="info.ranking">Ranking</h4>
+                    <p data-i18n="info.rankingDesc1">Por defecto ordenado por tiempo total</p>
+                    <p data-i18n="info.rankingDesc2">Puedes alternar entre tiempo, costo o número de transbordos</p>
                 </article>
             </div>
         </section>
@@ -143,8 +148,8 @@
 
     <footer class="pie">
         <div class="pie__contenedor">
-            <p class="pie__texto">GuaguaTime RD - Simulador de Transporte Público Dominicano</p>
-            <p class="pie__texto">Proyecto Académico - Todos los datos son estimados</p>
+            <p class="pie__texto" data-i18n="footer.title">GuaguaTime RD - Simulador de Transporte Público Dominicano</p>
+            <p class="pie__texto" data-i18n="footer.subtitle">Proyecto Académico - Todos los datos son estimados</p>
         </div>
     </footer>
 

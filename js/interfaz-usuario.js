@@ -1,10 +1,12 @@
 import { debounce } from "./utilidades.js"
 
 export class InterfazUsuario {
-  constructor(gestorDatos, calculadorRutas, gestorFavoritos) {
+  constructor(gestorDatos, calculadorRutas, gestorFavoritos, gestorIdioma, gestorTema) {
     this.gestorDatos = gestorDatos
     this.calculadorRutas = calculadorRutas
     this.gestorFavoritos = gestorFavoritos
+    this.gestorIdioma = gestorIdioma
+    this.gestorTema = gestorTema
 
     this.elementos = {
       formulario: document.getElementById("formulario-busqueda"),
@@ -22,6 +24,7 @@ export class InterfazUsuario {
       cerrarFavoritos: document.getElementById("cerrar-favoritos"),
       botonMapa: document.getElementById("boton-mapa"),
       botonModoOscuro: document.getElementById("boton-modo-oscuro"),
+      botonIdioma: document.getElementById("boton-idioma"),
     }
 
     this.origenSeleccionado = null
@@ -71,11 +74,15 @@ export class InterfazUsuario {
     })
 
     this.elementos.botonMapa.addEventListener("click", () => {
-      alert("Funcionalidad de mapa no implementada")
+      alert(this.gestorIdioma.t("alerts_messages.mapNotImplemented"))
     })
 
     this.elementos.botonModoOscuro.addEventListener("click", () => {
-      alert("Funcionalidad de modo oscuro no implementada")
+      this.alternarModoOscuro()
+    })
+
+    this.elementos.botonIdioma.addEventListener("click", () => {
+      this.alternarIdioma()
     })
 
     const radios = document.querySelectorAll('input[name="ordenar"]')
@@ -158,13 +165,13 @@ export class InterfazUsuario {
                     <h4 class="alerta__titulo">${condicion.nombre}</h4>
                     <p class="alerta__descripcion">${condicion.descripcion}</p>
                     <p class="alerta__descripcion">
-                        <small>Impacto: +${condicion.tiempo_pct}% tiempo, +RD$${condicion.costo_extra} costo</small>
+                        <small>${this.gestorIdioma.t("alerts.impact")}: +${condicion.tiempo_pct}% ${this.gestorIdioma.t("results.time").toLowerCase()}, +RD$${condicion.costo_extra} ${this.gestorIdioma.t("results.cost").toLowerCase()}</small>
                     </p>
                 </div>
                 <div class="alerta__toggle">
-                    <input 
-                        type="checkbox" 
-                        class="alerta__checkbox" 
+                    <input
+                        type="checkbox"
+                        class="alerta__checkbox"
                         id="condicion-${condicion.id}"
                         ${condicion.activa ? "checked" : ""}
                         data-id="${condicion.id}"
@@ -185,14 +192,40 @@ export class InterfazUsuario {
     })
   }
 
+  alternarModoOscuro() {
+    const nuevoTema = this.gestorTema.alternarTema()
+    const textoBoton = nuevoTema === "oscuro"
+      ? this.gestorIdioma.t("header.lightMode")
+      : this.gestorIdioma.t("header.darkMode")
+    this.elementos.botonModoOscuro.textContent = textoBoton
+  }
+
+  alternarIdioma() {
+    this.gestorIdioma.alternarIdioma()
+    window.app.actualizarTextos()
+    this.actualizarTextoModoOscuro()
+    if (this.ultimasRutas) {
+      this.renderizarResultados(this.ultimasRutas)
+    }
+    this.renderizarAlertas()
+  }
+
+  actualizarTextoModoOscuro() {
+    const temaActual = this.gestorTema.obtenerTema()
+    const textoBoton = temaActual === "oscuro"
+      ? this.gestorIdioma.t("header.lightMode")
+      : this.gestorIdioma.t("header.darkMode")
+    this.elementos.botonModoOscuro.textContent = textoBoton
+  }
+
   buscarRutas() {
     if (!this.origenSeleccionado || !this.destinoSeleccionado) {
-      alert("Por favor selecciona origen y destino de las sugerencias")
+      alert(this.gestorIdioma.t("alerts_messages.selectFromSuggestions"))
       return
     }
 
     if (this.origenSeleccionado.id === this.destinoSeleccionado.id) {
-      alert("El origen y destino no pueden ser el mismo")
+      alert(this.gestorIdioma.t("alerts_messages.sameOriginDestination"))
       return
     }
 
@@ -200,7 +233,7 @@ export class InterfazUsuario {
 
     if (rutas.length === 0) {
       this.elementos.mensajeVacio.innerHTML = `
-                <p>No se encontraron rutas entre ${this.origenSeleccionado.nombre} y ${this.destinoSeleccionado.nombre}</p>
+                <p>${this.gestorIdioma.t("results.noRoutes")} ${this.origenSeleccionado.nombre} y ${this.destinoSeleccionado.nombre}</p>
             `
       this.elementos.mensajeVacio.style.display = "block"
       this.elementos.listaResultados.innerHTML = ""
@@ -244,26 +277,26 @@ export class InterfazUsuario {
                     <span class="tarjeta-ruta__tipo tarjeta-ruta__tipo--${ruta.tipo}">
                         ${tipoTexto}
                     </span>
-                    <button 
-                        class="tarjeta-ruta__favorito" 
+                    <button
+                        class="tarjeta-ruta__favorito"
                         data-ruta-id="${ruta.id}"
-                        aria-label="${esFavorito ? "Quitar de favoritos" : "Agregar a favoritos"}"
+                        aria-label="${esFavorito ? this.gestorIdioma.t("results.removeFromFavorites") : this.gestorIdioma.t("results.addToFavorites")}"
                     >
                         ${esFavorito ? "★" : "☆"}
                     </button>
                 </div>
-                
+
                 <div class="tarjeta-ruta__info">
                     <div class="tarjeta-ruta__dato">
-                        <span class="tarjeta-ruta__etiqueta">Tiempo</span>
-                        <span class="tarjeta-ruta__valor">${ruta.tiempoTotal} min</span>
+                        <span class="tarjeta-ruta__etiqueta">${this.gestorIdioma.t("results.time")}</span>
+                        <span class="tarjeta-ruta__valor">${ruta.tiempoTotal} ${this.gestorIdioma.t("results.min")}</span>
                     </div>
                     <div class="tarjeta-ruta__dato">
-                        <span class="tarjeta-ruta__etiqueta">Costo</span>
+                        <span class="tarjeta-ruta__etiqueta">${this.gestorIdioma.t("results.cost")}</span>
                         <span class="tarjeta-ruta__valor">RD$${ruta.costoTotal}</span>
                     </div>
                     <div class="tarjeta-ruta__dato">
-                        <span class="tarjeta-ruta__etiqueta">Transbordos</span>
+                        <span class="tarjeta-ruta__etiqueta">${this.gestorIdioma.t("results.transfers")}</span>
                         <span class="tarjeta-ruta__valor">${ruta.transbordos}</span>
                     </div>
                 </div>
@@ -273,7 +306,7 @@ export class InterfazUsuario {
                     ? `
                     <div style="margin-bottom: var(--espaciado-md);">
                         <small style="color: var(--color-texto-terciario);">
-                            Condiciones aplicadas: ${ruta.condicionesAplicadas.join(", ")}
+                            ${this.gestorIdioma.t("results.conditionsApplied")}: ${ruta.condicionesAplicadas.join(", ")}
                         </small>
                     </div>
                 `
@@ -281,13 +314,13 @@ export class InterfazUsuario {
                 }
 
                 <div class="tarjeta-ruta__tramos">
-                    <h4 class="tarjeta-ruta__tramos-titulo">Detalles del recorrido</h4>
+                    <h4 class="tarjeta-ruta__tramos-titulo">${this.gestorIdioma.t("results.details")}</h4>
                     <div class="tarjeta-ruta__tramos-lista">
                         ${ruta.tramos
                           .map(
                             (tramo) => `
                             <div class="tramo">
-                                ${tramo.descripcion} (${tramo.tiempo_min} min, RD$${tramo.costo})
+                                ${tramo.descripcion} (${tramo.tiempo_min} ${this.gestorIdioma.t("results.min")}, RD$${tramo.costo})
                             </div>
                         `,
                           )

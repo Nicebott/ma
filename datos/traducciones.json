@@ -1,0 +1,134 @@
+{
+  "es": {
+    "header": {
+      "title": "GuaguaTime RD",
+      "subtitle": "Simulador de Rutas de Transporte Público",
+      "map": "Mapa",
+      "darkMode": "Modo Oscuro",
+      "lightMode": "Modo Claro",
+      "language": "English"
+    },
+    "search": {
+      "title": "Planifica tu Viaje",
+      "origin": "Origen",
+      "destination": "Destino",
+      "originPlaceholder": "Escribe tu punto de partida",
+      "destinationPlaceholder": "Escribe tu destino",
+      "sortBy": "Ordenar por",
+      "time": "Tiempo",
+      "cost": "Costo",
+      "transfers": "Transbordos",
+      "searchButton": "Buscar Rutas"
+    },
+    "alerts": {
+      "title": "Condiciones Actuales",
+      "impact": "Impacto"
+    },
+    "results": {
+      "title": "Rutas Disponibles",
+      "viewFavorites": "Ver Favoritos",
+      "emptyMessage": "Ingresa origen y destino para buscar rutas disponibles",
+      "noRoutes": "No se encontraron rutas entre",
+      "time": "Tiempo",
+      "cost": "Costo",
+      "transfers": "Transbordos",
+      "min": "min",
+      "details": "Detalles del recorrido",
+      "conditionsApplied": "Condiciones aplicadas",
+      "addToFavorites": "Agregar a favoritos",
+      "removeFromFavorites": "Quitar de favoritos"
+    },
+    "favorites": {
+      "title": "Mis Rutas Favoritas",
+      "close": "Cerrar",
+      "emptyMessage": "No tienes rutas favoritas guardadas"
+    },
+    "info": {
+      "title": "Criterios de Cálculo",
+      "routeTime": "Tiempo de Ruta",
+      "routeTimeDesc1": "Tiempo base = suma de tiempo_min de todos los tramos",
+      "routeTimeDesc2": "Por cada condición activa: tiempo = tiempo × (1 + tiempo_pct/100)",
+      "routeTimeDesc3": "Resultado redondeado al minuto más cercano",
+      "totalCost": "Costo Total",
+      "totalCostDesc": "Costo total = suma de costos base + suma de costos extra por condiciones",
+      "ranking": "Ranking",
+      "rankingDesc1": "Por defecto ordenado por tiempo total",
+      "rankingDesc2": "Puedes alternar entre tiempo, costo o número de transbordos"
+    },
+    "footer": {
+      "title": "GuaguaTime RD - Simulador de Transporte Público Dominicano",
+      "subtitle": "Proyecto Académico - Todos los datos son estimados"
+    },
+    "alerts_messages": {
+      "selectFromSuggestions": "Por favor selecciona origen y destino de las sugerencias",
+      "sameOriginDestination": "El origen y destino no pueden ser el mismo",
+      "mapNotImplemented": "Funcionalidad de mapa no implementada"
+    }
+  },
+  "en": {
+    "header": {
+      "title": "GuaguaTime RD",
+      "subtitle": "Public Transport Route Simulator",
+      "map": "Map",
+      "darkMode": "Dark Mode",
+      "lightMode": "Light Mode",
+      "language": "Español"
+    },
+    "search": {
+      "title": "Plan Your Trip",
+      "origin": "Origin",
+      "destination": "Destination",
+      "originPlaceholder": "Enter your starting point",
+      "destinationPlaceholder": "Enter your destination",
+      "sortBy": "Sort by",
+      "time": "Time",
+      "cost": "Cost",
+      "transfers": "Transfers",
+      "searchButton": "Search Routes"
+    },
+    "alerts": {
+      "title": "Current Conditions",
+      "impact": "Impact"
+    },
+    "results": {
+      "title": "Available Routes",
+      "viewFavorites": "View Favorites",
+      "emptyMessage": "Enter origin and destination to search for available routes",
+      "noRoutes": "No routes found between",
+      "time": "Time",
+      "cost": "Cost",
+      "transfers": "Transfers",
+      "min": "min",
+      "details": "Trip details",
+      "conditionsApplied": "Conditions applied",
+      "addToFavorites": "Add to favorites",
+      "removeFromFavorites": "Remove from favorites"
+    },
+    "favorites": {
+      "title": "My Favorite Routes",
+      "close": "Close",
+      "emptyMessage": "You have no saved favorite routes"
+    },
+    "info": {
+      "title": "Calculation Criteria",
+      "routeTime": "Route Time",
+      "routeTimeDesc1": "Base time = sum of tiempo_min for all segments",
+      "routeTimeDesc2": "For each active condition: time = time × (1 + tiempo_pct/100)",
+      "routeTimeDesc3": "Result rounded to the nearest minute",
+      "totalCost": "Total Cost",
+      "totalCostDesc": "Total cost = sum of base costs + sum of extra costs for conditions",
+      "ranking": "Ranking",
+      "rankingDesc1": "Default sorted by total time",
+      "rankingDesc2": "You can switch between time, cost or number of transfers"
+    },
+    "footer": {
+      "title": "GuaguaTime RD - Dominican Public Transport Simulator",
+      "subtitle": "Academic Project - All data is estimated"
+    },
+    "alerts_messages": {
+      "selectFromSuggestions": "Please select origin and destination from the suggestions",
+      "sameOriginDestination": "Origin and destination cannot be the same",
+      "mapNotImplemented": "Map functionality not implemented"
+    }
+  }
+}
