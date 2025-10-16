@@ -1,0 +1,77 @@
+[
+  {
+    "id": "zona-colonial",
+    "nombre": "Zona Colonial",
+    "sector": "Distrito Nacional"
+  },
+  {
+    "id": "gazcue",
+    "nombre": "Gazcue",
+    "sector": "Distrito Nacional"
+  },
+  {
+    "id": "naco",
+    "nombre": "Naco",
+    "sector": "Distrito Nacional"
+  },
+  {
+    "id": "piantini",
+    "nombre": "Piantini",
+    "sector": "Distrito Nacional"
+  },
+  {
+    "id": "bella-vista",
+    "nombre": "Bella Vista",
+    "sector": "Distrito Nacional"
+  },
+  {
+    "id": "los-mina",
+    "nombre": "Los Mina",
+    "sector": "Santo Domingo Este"
+  },
+  {
+    "id": "villa-mella",
+    "nombre": "Villa Mella",
+    "sector": "Santo Domingo Norte"
+  },
+  {
+    "id": "herrera",
+    "nombre": "Herrera",
+    "sector": "Santo Domingo Oeste"
+  },
+  {
+    "id": "los-alcarrizos",
+    "nombre": "Los Alcarrizos",
+    "sector": "Santo Domingo Oeste"
+  },
+  {
+    "id": "santo-domingo-este",
+    "nombre": "Centro Santo Domingo Este",
+    "sector": "Santo Domingo Este"
+  },
+  {
+    "id": "villa-consuelo",
+    "nombre": "Villa Consuelo",
+    "sector": "Distrito Nacional"
+  },
+  {
+    "id": "cristo-rey",
+    "nombre": "Cristo Rey",
+    "sector": "Distrito Nacional"
+  },
+  {
+    "id": "ensanche-luperon",
+    "nombre": "Ensanche Luperón",
+    "sector": "Distrito Nacional"
+  },
+  {
+    "id": "los-tres-ojos",
+    "nombre": "Los Tres Ojos",
+    "sector": "Santo Domingo Este"
+  },
+  {
+    "id": "boca-chica",
+    "nombre": "Boca Chica",
+    "sector": "Santo Domingo Este"
+  }
+]

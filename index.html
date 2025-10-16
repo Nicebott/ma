@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GuaguaTime RD - Simulador de rutas y costos del transporte público dominicano">
+    <title>GuaguaTime RD - Simulador de Transporte Público</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div class="encabezado__contenedor">
+            <h1 class="encabezado__titulo">GuaguaTime RD</h1>
+            <p class="encabezado__subtitulo">Simulador de Rutas de Transporte Público</p>
+            <nav class="encabezado__navegacion">
+                <button class="boton boton--secundario" id="boton-mapa" aria-label="Ver mapa">
+                    Mapa
+                </button>
+                <button class="boton boton--secundario" id="boton-modo-oscuro" aria-label="Cambiar modo oscuro">
+                    Modo Oscuro
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="principal">
+        <section class="buscador" aria-label="Buscador de rutas">
+            <div class="buscador__contenedor">
+                <h2 class="buscador__titulo">Planifica tu Viaje</h2>
+                
+                <form class="formulario" id="formulario-busqueda">
+                    <div class="formulario__grupo">
+                        <label for="origen" class="formulario__etiqueta">Origen</label>
+                        <input 
+                            type="text" 
+                            id="origen" 
+                            class="formulario__campo"
+                            placeholder="Escribe tu punto de partida"
+                            autocomplete="off"
+                            required
+                            aria-describedby="origen-sugerencias"
+                        >
+                        <ul class="sugerencias" id="origen-sugerencias" role="listbox"></ul>
+                    </div>
+
+                    <div class="formulario__grupo">
+                        <label for="destino" class="formulario__etiqueta">Destino</label>
+                        <input 
+                            type="text" 
+                            id="destino" 
+                            class="formulario__campo"
+                            placeholder="Escribe tu destino"
+                            autocomplete="off"
+                            required
+                            aria-describedby="destino-sugerencias"
+                        >
+                        <ul class="sugerencias" id="destino-sugerencias" role="listbox"></ul>
+                    </div>
+
+                    <div class="formulario__grupo">
+                        <label class="formulario__etiqueta">Ordenar por</label>
+                        <div class="formulario__opciones">
+                            <label class="radio">
+                                <input type="radio" name="ordenar" value="tiempo" checked>
+                                <span class="radio__texto">Tiempo</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="ordenar" value="costo">
+                                <span class="radio__texto">Costo</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="ordenar" value="transbordos">
+                                <span class="radio__texto">Transbordos</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="boton boton--primario">
+                        Buscar Rutas
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <section class="alertas" id="seccion-alertas" aria-label="Alertas de tráfico">
+            <div class="alertas__contenedor">
+                <h3 class="alertas__titulo">Condiciones Actuales</h3>
+                <div class="alertas__lista" id="lista-alertas"></div>
+            </div>
+        </section>
+
+        <section class="resultados" id="seccion-resultados" aria-label="Resultados de búsqueda">
+            <div class="resultados__contenedor">
+                <div class="resultados__encabezado">
+                    <h2 class="resultados__titulo">Rutas Disponibles</h2>
+                    <button class="boton boton--texto" id="boton-favoritos">
+                        Ver Favoritos
+                    </button>
+                </div>
+                <div class="resultados__lista" id="lista-resultados"></div>
+                <div class="resultados__vacio" id="mensaje-vacio">
+                    <p>Ingresa origen y destino para buscar rutas disponibles</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="favoritos oculto" id="seccion-favoritos" aria-label="Rutas favoritas">
+            <div class="favoritos__contenedor">
+                <div class="favoritos__encabezado">
+                    <h2 class="favoritos__titulo">Mis Rutas Favoritas</h2>
+                    <button class="boton boton--texto" id="cerrar-favoritos">
+                        Cerrar
+                    </button>
+                </div>
+                <div class="favoritos__lista" id="lista-favoritos"></div>
+                <div class="favoritos__vacio" id="favoritos-vacio">
+                    <p>No tienes rutas favoritas guardadas</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="informacion" aria-label="Información de cálculo">
+            <div class="informacion__contenedor">
+                <h3 class="informacion__titulo">Criterios de Cálculo</h3>
+                <article class="informacion__contenido">
+                    <h4>Tiempo de Ruta</h4>
+                    <p>Tiempo base = suma de tiempo_min de todos los tramos</p>
+                    <p>Por cada condición activa: tiempo = tiempo × (1 + tiempo_pct/100)</p>
+                    <p>Resultado redondeado al minuto más cercano</p>
+                </article>
+                <article class="informacion__contenido">
+                    <h4>Costo Total</h4>
+                    <p>Costo total = suma de costos base + suma de costos extra por condiciones</p>
+                </article>
+                <article class="informacion__contenido">
+                    <h4>Ranking</h4>
+                    <p>Por defecto ordenado por tiempo total</p>
+                    <p>Puedes alternar entre tiempo, costo o número de transbordos</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="pie__contenedor">
+            <p class="pie__texto">GuaguaTime RD - Simulador de Transporte Público Dominicano</p>
+            <p class="pie__texto">Proyecto Académico - Todos los datos son estimados</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/aplicacion.js"></script>
+</body>
+</html>

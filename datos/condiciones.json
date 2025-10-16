@@ -1,0 +1,29 @@
+[
+  {
+    "id": "lluvia",
+    "nombre": "Lluvia",
+    "descripcion": "Condiciones de lluvia afectan el tráfico",
+    "tipo": "lluvia",
+    "tiempo_pct": 30,
+    "costo_extra": 0,
+    "activa": false
+  },
+  {
+    "id": "hora-pico",
+    "nombre": "Hora Pico",
+    "descripcion": "Tráfico intenso en horas pico (7-9 AM, 5-7 PM)",
+    "tipo": "hora-pico",
+    "tiempo_pct": 50,
+    "costo_extra": 10,
+    "activa": false
+  },
+  {
+    "id": "paro",
+    "nombre": "Paro de Transporte",
+    "descripcion": "Paro o manifestación afecta rutas principales",
+    "tipo": "paro",
+    "tiempo_pct": 100,
+    "costo_extra": 50,
+    "activa": false
+  }
+]

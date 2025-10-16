@@ -1,0 +1,193 @@
+[
+  {
+    "id": "ruta-1",
+    "origen": "zona-colonial",
+    "destino": "naco",
+    "tipo": "guagua",
+    "tramos": [
+      {
+        "descripcion": "Zona Colonial a Gazcue",
+        "tiempo_min": 15,
+        "costo": 25
+      },
+      {
+        "descripcion": "Gazcue a Naco",
+        "tiempo_min": 10,
+        "costo": 25
+      }
+    ]
+  },
+  {
+    "id": "ruta-2",
+    "origen": "zona-colonial",
+    "destino": "naco",
+    "tipo": "concho",
+    "tramos": [
+      {
+        "descripcion": "Zona Colonial a Naco directo",
+        "tiempo_min": 20,
+        "costo": 50
+      }
+    ]
+  },
+  {
+    "id": "ruta-3",
+    "origen": "zona-colonial",
+    "destino": "naco",
+    "tipo": "motoconcho",
+    "tramos": [
+      {
+        "descripcion": "Zona Colonial a Naco directo",
+        "tiempo_min": 15,
+        "costo": 150
+      }
+    ]
+  },
+  {
+    "id": "ruta-4",
+    "origen": "gazcue",
+    "destino": "piantini",
+    "tipo": "guagua",
+    "tramos": [
+      {
+        "descripcion": "Gazcue a Bella Vista",
+        "tiempo_min": 12,
+        "costo": 25
+      },
+      {
+        "descripcion": "Bella Vista a Piantini",
+        "tiempo_min": 8,
+        "costo": 25
+      }
+    ]
+  },
+  {
+    "id": "ruta-5",
+    "origen": "gazcue",
+    "destino": "piantini",
+    "tipo": "carro-publico",
+    "tramos": [
+      {
+        "descripcion": "Gazcue a Piantini directo",
+        "tiempo_min": 15,
+        "costo": 40
+      }
+    ]
+  },
+  {
+    "id": "ruta-6",
+    "origen": "los-mina",
+    "destino": "zona-colonial",
+    "tipo": "guagua",
+    "tramos": [
+      {
+        "descripcion": "Los Mina a Villa Consuelo",
+        "tiempo_min": 25,
+        "costo": 30
+      },
+      {
+        "descripcion": "Villa Consuelo a Zona Colonial",
+        "tiempo_min": 15,
+        "costo": 25
+      }
+    ]
+  },
+  {
+    "id": "ruta-7",
+    "origen": "los-mina",
+    "destino": "zona-colonial",
+    "tipo": "concho",
+    "tramos": [
+      {
+        "descripcion": "Los Mina a Zona Colonial directo",
+        "tiempo_min": 35,
+        "costo": 60
+      }
+    ]
+  },
+  {
+    "id": "ruta-8",
+    "origen": "villa-mella",
+    "destino": "gazcue",
+    "tipo": "guagua",
+    "tramos": [
+      {
+        "descripcion": "Villa Mella a Cristo Rey",
+        "tiempo_min": 30,
+        "costo": 35
+      },
+      {
+        "descripcion": "Cristo Rey a Gazcue",
+        "tiempo_min": 15,
+        "costo": 25
+      }
+    ]
+  },
+  {
+    "id": "ruta-9",
+    "origen": "herrera",
+    "destino": "bella-vista",
+    "tipo": "carro-publico",
+    "tramos": [
+      {
+        "descripcion": "Herrera a Bella Vista directo",
+        "tiempo_min": 25,
+        "costo": 45
+      }
+    ]
+  },
+  {
+    "id": "ruta-10",
+    "origen": "los-alcarrizos",
+    "destino": "naco",
+    "tipo": "guagua",
+    "tramos": [
+      {
+        "descripcion": "Los Alcarrizos a Ensanche Luperón",
+        "tiempo_min": 20,
+        "costo": 30
+      },
+      {
+        "descripcion": "Ensanche Luperón a Bella Vista",
+        "tiempo_min": 15,
+        "costo": 25
+      },
+      {
+        "descripcion": "Bella Vista a Naco",
+        "tiempo_min": 10,
+        "costo": 25
+      }
+    ]
+  },
+  {
+    "id": "ruta-11",
+    "origen": "boca-chica",
+    "destino": "zona-colonial",
+    "tipo": "guagua",
+    "tramos": [
+      {
+        "descripcion": "Boca Chica a Los Tres Ojos",
+        "tiempo_min": 20,
+        "costo": 30
+      },
+      {
+        "descripcion": "Los Tres Ojos a Zona Colonial",
+        "tiempo_min": 25,
+        "costo": 35
+      }
+    ]
+  },
+  {
+    "id": "ruta-12",
+    "origen": "boca-chica",
+    "destino": "zona-colonial",
+    "tipo": "carro-publico",
+    "tramos": [
+      {
+        "descripcion": "Boca Chica a Zona Colonial directo",
+        "tiempo_min": 40,
+        "costo": 70
+      }
+    ]
+  }
+]
